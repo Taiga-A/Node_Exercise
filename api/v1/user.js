@@ -14,7 +14,6 @@ router.post('/new', async (ctx, next) => {
     password: ctx.request.body.password,
   }
 
-
   ctx.body = user
 
   User.create(user)

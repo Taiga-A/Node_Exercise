@@ -15,9 +15,18 @@ User.init({
     primaryKey: true, //作为主键
     autoIncrement: true,//自增长
   },
-  nickname: Sequelize.STRING,
-  email: Sequelize.STRING,
-  phonenumber: Sequelize.STRING,
+  nickname: {
+    unique: true,
+    type: Sequelize.STRING
+  },
+  email: {
+    unique: true,
+    type: Sequelize.STRING
+  },
+  phonenumber: {
+    unique: true,
+    type: Sequelize.STRING
+  },
   password: {
     type: Sequelize.STRING(128),
     set(val) {
