@@ -4,8 +4,8 @@ const router = new Router({
   prefix: '/user'
 })
 
-const {User} = require('../../models/user')
-const {emailSend} = require('../../core/email')
+const {User} = require('../../../models/user')
+const {emailSend} = require('../../../core/email/email')
 
 router.post('/new', async (ctx, next) => {
   const user = {

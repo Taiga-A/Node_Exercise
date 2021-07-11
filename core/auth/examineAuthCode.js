@@ -1,6 +1,6 @@
 const {
   AuthCode
-} = require('../models/auth_code')
+} = require('../../models/auth_code')
 
 module.exports = async function examineAuthCode(code) {
   let jane = await AuthCode.findOne({

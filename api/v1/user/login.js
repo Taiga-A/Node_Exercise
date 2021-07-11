@@ -1,6 +1,6 @@
 const Router = require('koa-router')
 
-const loginTest = require('../../core/loginTest')
+const loginTest = require('../../../core/loginTest')
 
 const router = new Router({
   prefix: '/user'
