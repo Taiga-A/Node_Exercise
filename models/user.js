@@ -16,7 +16,7 @@ User.init({
     autoIncrement: true,//自增长
   },
   nickname: {
-    unique: true,
+    unique: false,
     type: Sequelize.STRING
   },
   email: {
