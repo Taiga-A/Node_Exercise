@@ -1,27 +1,27 @@
-const Email = require('emailjs')
+const nodemailer = require('nodemailer')
 
-async function emailSend(sendEmailTo , emailHead, emailBody) {
-  const client = new Email.SMTPClient({
-    user: '2738890162@qq.com',
-    password: 'swwvruluvrqddcjb',
-    host: 'smtp.qq.com',
-    ssl: true
+async function emailSend(sendEmailTo , emailHead, emailHtmlBody) {
+  let client = nodemailer.createTransport({
+    service: 'qq',
+    secure: true,
+    auth: {
+      user:"2738890162@qq.com",
+      pass: 'swwvruluvrqddcjb',
+    },
   })
 
-  try {
-    const mes = await client.sendAsync({
-      text: emailBody,
-      from: 'zedada264@foxmail.com',
-      to: sendEmailTo,
-      subject: emailHead
-    })
-    console.log('Email send seccss,to ' + sendEmailTo)
-    return true
-
-  } catch (error) {
-    console.log(error)
-    return false
+  const mailOptions = {
+    html: emailHtmlBody,
+    from: 'zedada264@foxmail.com',
+    to: sendEmailTo,
+    subject: emailHead,
   }
+
+  client.sendMail(mailOptions,(err, info)=>{
+    if(err)console.log('err:do not send to ' + sendEmailTo + '\n' + err)
+    else console.log('successfully send to ' + sendEmailTo)
+  })
+
 }
 
 module.exports = {
