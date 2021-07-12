@@ -7,7 +7,7 @@ const router = new Router({
 const {User} = require('../../../models/user')
 const {emailSend} = require('../../../core/email/email')
 
-router.post('/new', async (ctx, next) => {
+router.post('/signup', async (ctx, next) => {
   const user = {
     email: ctx.request.body.email,
     nickname: ctx.request.body.nickname,

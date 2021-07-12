@@ -7,7 +7,7 @@ const router = new Router({
 })
 
 
-router.post('/login', async (ctx, next) => {
+router.post('/signin', async (ctx, next) => {
   const user = {
     type: ctx.request.body.type,
     key: ctx.request.body.key,
