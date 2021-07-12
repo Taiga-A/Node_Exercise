@@ -12,13 +12,13 @@ module.exports = async function loginTest(user) {
     case 'phonenumber':
       code = true
       break;
-    case 'nickname':
-      code = true
-      break;
+    // case 'nickname':
+    //   code = true
+    //   break;
     default:
       ctx.body = {
         ok: false,
-        mes: '错误的类型，您只可选用邮箱，电话号码或昵称：email 、phonenumber 、nickname 作为 type !!'
+        mes: '错误的类型，您只可选用邮箱或电话号码：email 、phonenumber 作为 type !!'
       }
       break;
   }
@@ -41,7 +41,8 @@ module.exports = async function loginTest(user) {
       if(passwordOk) {
         ctx.body = {
           ok: true,
-          mes: '登陆成功'
+          mes: '登陆成功',
+          id: res.id
         }
       } else {
         ctx.body = {

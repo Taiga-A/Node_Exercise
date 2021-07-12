@@ -6,4 +6,8 @@ module.exports = {
     user: "root",
     password: "123456",
   },
+  security: {
+    key:"zedada",
+    time: 60*60*24*30
+  }
 }

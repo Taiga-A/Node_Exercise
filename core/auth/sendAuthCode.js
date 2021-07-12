@@ -13,7 +13,7 @@ module.exports = async function sendAuthCode(email) {
 
   emailSend(
     email,
-    '[泽大大的小屋]验证码(5分钟内有效)',
+    '[Taiga_A 的小屋]验证码(5分钟内有效)',
     '<div style="color: #fff;background:#000;padding: 30px;font-size: 50px;">' + '' + newCode + '</div>'
   )
 

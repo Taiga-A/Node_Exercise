@@ -3,11 +3,11 @@ const Router = require('koa-router')
 const sendAuthCode = require('../../../../core/auth/sendAuthCode')
 
 const router = new Router({
-  prefix: '/user'
+  prefix: '/user/authcode'
 })
 
 
-router.get('/authcodeget', async (ctx, next) => {
+router.get('/get', async (ctx, next) => {
   await sendAuthCode(ctx.query.email)
   ctx.body = {
     ok: true

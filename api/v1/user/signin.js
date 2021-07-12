@@ -1,6 +1,9 @@
 const Router = require('koa-router')
 
 const loginTest = require('../../../core/loginTest')
+const {
+  getToken
+} = require('../../../core/util')
 
 const router = new Router({
   prefix: '/user'
@@ -15,6 +18,9 @@ router.post('/signin', async (ctx, next) => {
   }
 
   ctx.body = await loginTest(user)
+  if (ctx.body.ok) {
+    ctx.body['token'] = getToken(ctx.body.id, 2)
+  }
 
   await next()
 })

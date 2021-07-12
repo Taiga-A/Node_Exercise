@@ -3,11 +3,11 @@ const Router = require('koa-router')
 const examineAuthCode = require('../../../../core/auth/examineAuthCode')
 
 const router = new Router({
-  prefix: '/user'
+  prefix: '/user/authcode'
 })
 
 
-router.post('/authcodepush', async (ctx, next) => {
+router.post('/push', async (ctx, next) => {
   if( await examineAuthCode(ctx.request.body.code) ) {
     ctx.body = {
       ok: true,
