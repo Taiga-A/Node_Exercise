@@ -3,7 +3,7 @@ const Router = require('koa-router')
 const examineAuthCode = require('../../../../core/auth/examineAuthCode')
 
 const router = new Router({
-  prefix: '/user/authcode'
+  prefix: '/api/v1/user/authcode'
 })
 
 
